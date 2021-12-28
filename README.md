@@ -2,7 +2,7 @@
 <br/>
 
 <p align="center">
-  <a href=""><img alt="license" src="https://img.shields.io/github/license/dompham21/Imusicvn-SpringBoot-NextJs" ></a>
+  <a href="https://github.com/dompham21/Imusicvn-SpringBoot-NextJs"><img alt="license" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 </p> 
 
 ## [View Demo](http://imusic.vn.s3-website-ap-southeast-1.amazonaws.com)
