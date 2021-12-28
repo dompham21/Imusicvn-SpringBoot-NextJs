@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+
+
+
+<script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<script th:src="@{/peritable/peritable.js}"></script>
+<link rel="stylesheet" th:href="@{/peritable/peritable.css}" />
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Cover Star</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/">Home</a></li>
+					<li sec:authorize="hasRole('ROLE_ADMIN')"><a href="/admin">Admin</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right"
+					sec:authorize="!isAuthenticated()">
+					<li><a href="/registrasi"><span
+							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="/login"><span
+							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right"
+					sec:authorize="isAuthenticated()">
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#" sec:authentication="name"><span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/logout">Logout</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="jumbotron" sec:authorize="!isAuthenticated()">
+			<h1>Multiple role user authentication login spring.</h1>
+			<p>This tutorial explains how to create authenticated user role
+				access to access certain resources based on granted access.</p>
+		</div>
+		<div class="jumbotron" sec:authorize="isAuthenticated()">
+			<h1>
+				Hello, <span sec:authentication="name"></span> !
+			</h1>
+			<div sec:authorize="hasRole('ROLE_ADMIN')">
+				<p>This content can only be accessed by users with ROLE_ADMIN</p>
+			</div>
+			<div sec:authorize="hasRole('ROLE_MEMBER')">
+				<p>This content can only be accessed by users with ROLE_MEMBER</p>
+			</div>
+		</div>
+
+		<div class="peritable-responsive">
+			<table id="example" class="table table-striped table-bordered">
+				<thead></thead>
+				<tfoot></tfoot>
+				<tbody></tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script th:inline="javascript">
+    	var page = [[${page}]];
+    	console.log(page)
+    	
+    	$('#example').peritable({
+	       tableY: true,
+	       tableHeight: 400,
+	       url: '/pagination',
+	       columnName: ["id", "username", "email"],
+	       totalElements: page.totalElements
+	    });
+	</script>
+</body>

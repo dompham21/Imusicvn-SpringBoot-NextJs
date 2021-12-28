@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Login - Music Website', 'none')" />
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+<body>
+
+	<div class="container-fluid auth-container d-flex justify-content-center align-items-center">
+
+		<form class="auth-form needs-validation" th:action="@{/login}" method="post">
+
+			<div class="auth-form-wrapper-logo mb-4 pt-4 d-flex justify-content-center align-items-center">
+				<img src="https://res.cloudinary.com/dmriwkfll/image/upload/v1636703629/13a79d6ca66b4a1bb1d05c9337e6536b_3_xfkc8t.png"/>
+			</div>
+			<p class="auth-form-desc text-center mb-5">Sign in and start managing your candidates!</p>
+			<div th:if="${param.error}">
+				<p class="text-danger text-center">Invalid username and password.</p>
+			</div>
+
+			<div th:if="${param.logout}">
+				<p class="text-warning text-center">You have been logged out.</p>
+			</div>
+			<div class="mb-4 d-flex justify-content-center align-items-center">
+				<input type="email" name="email"  class="form-control auth-input"  placeholder="Email" id="email" required>
+			</div>
+			<div class="mb-3 d-flex justify-content-center align-items-center">
+				<input type="password" name="password" class="form-control auth-input" placeholder="Password" id="password" required>
+			</div>
+			<div class="mb-3 d-flex align-items-center justify-content-start">
+				<input class="form-check-input auth-check-input" type="checkbox" name="remember-me" id="remember-me">
+				<label class="form-check-label auth-check-label" for="remember-me">
+					Remember me
+				</label>
+
+			</div>
+			<button type="submit" class="btn btn-danger auth-btn">Login</button>
+
+			<p class="mt-3">Don't have account? <span><a style="color: #20DF7F;text-decoration: none" href="/signup">Sign up</a></span></p>
+		</form>
+		<div th:replace="fragments :: toast"></div>
+		<div class="auth-footer">
+			<img class="auth-footer-img" src="https://res.cloudinary.com/dmriwkfll/image/upload/v1636682353/Vectors_fbzj2w.png">
+		</div>
+	</div>
+	
+
+<!--	<script th:src="@{/js/login.js}"></script>-->
+	<script th:inline="javascript" type="text/javascript" >
+		$(document).ready(function(){
+			let toastModal = document.getElementById('toast')
+			let message =  [[${message}]];
+
+			if (message) {
+				let toast = new bootstrap.Toast(toastModal)
+				$("#toast-body").text(message)
+				toast.show()
+			}
+		});
+	</script>
+</body>
+</html>

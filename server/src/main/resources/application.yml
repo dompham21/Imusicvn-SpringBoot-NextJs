@@ -1,0 +1,51 @@
+cloud:
+  aws:
+    credentials:
+      access-key:
+      secret-key:
+    region:
+      static:
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name:
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 5MB
+      max-file-size: 100MB
+      max-request-size: 500MB
+  datasource:
+    url:
+    username:
+    password:
+    jpa:
+      hibernate.ddl-auto: update
+      generate-ddl: true
+      show-sql: false
+  profiles:
+    active: default
+
+server:
+  port: 5000
+  contextPath: /
+
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username:
+  password:
+  protocol: smtp
+  default-encoding: UTF-8
+  properties.mail.smtp:
+    auth: true
+    starttls.enable: true
+    ssl.trust:
+    connectiontimeout: 25000
+    timeout: 25000
+    writetimeout: 25000

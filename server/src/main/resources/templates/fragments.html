@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="page_head(title, remove)" th:remove="${remove}">
+    <meta charset="UTF-8">
+    <title>[[${title}]]</title>
+    <link href = "https://res.cloudinary.com/dmriwkfll/image/upload/v1636703629/13a79d6ca66b4a1bb1d05c9337e6536b_3_xfkc8t.png" rel="icon" type = "image/x-icon">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" ></script>
+</head>
+<body>
+    <div th:fragment="modal_dialog" class="modal fade text-center" id="modalDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalTitle" style="color: black"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <span id="modalBody" style="color: black"></span>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="toast" class="position-fixed p-3" style="z-index: 11; top:0;right:0">
+        <div id="toast" class="toast" role="alert" data-delay="3000" aria-live="assertive" aria-atomic="true" style="background-color: rgb(56, 142, 60); color: white" >
+            <div class="toast-header justify-content-between" style="background-color: rgb(56, 142, 60); color: white">
+                <strong class="me-auto">iMusic</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toast-body" class="p-3">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Verify - iMusic Website', 'none')" />
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+<body>
+<div class="container-fluid auth-container d-flex justify-content-center align-items-center">
+
+    <form class="auth-form needs-validation">
+        <div class="auth-form-wrapper-logo mb-4 pt-4 d-flex justify-content-center align-items-center">
+            <img src="https://res.cloudinary.com/dmriwkfll/image/upload/v1636703629/13a79d6ca66b4a1bb1d05c9337e6536b_3_xfkc8t.png"/>
+        </div>
+        <h3 class="text-center">User Verification</h3>
+        <h4 class="text-center">Sorry, we could not verify account. </h4>
+        <h4  class="text-center">It maybe already verified, or verification code is incorrect!</h4>
+        <p class="mt-3 text-center">Try create account again <span><a style="color: #20DF7F;text-decoration: none" href="/signup">Sign up</a></span></p>
+    </form>
+    <div th:replace="fragments :: toast"></div>
+    <div class="auth-footer">
+        <img class="auth-footer-img" src="https://res.cloudinary.com/dmriwkfll/image/upload/v1636682353/Vectors_fbzj2w.png">
+    </div>
+</div>
+</body>
+</html>

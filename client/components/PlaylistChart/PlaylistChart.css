@@ -1,0 +1,140 @@
+.chart-container {
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 90px;
+}
+
+.chart-container .bg-img, .chart-container .bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
+.chart-container .bg-img {
+    background: url(https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.5/static/media/bg-chart.fd766403.jpg) top/cover no-repeat; ;
+}
+
+.chart-container .bg-gradient {
+    opacity: 0.95;
+    z-index: var(--zindex-chart);
+    background-image: linear-gradient(180deg,#740091,#2d1a4c);
+}
+
+.chart-header {
+    position: relative;
+    font-size: 28px;
+    line-height: normal;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.chart-col-list {
+    width: calc(100% /3);
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-col-line {
+    width: calc(100%/3*2);
+}
+
+.list.song-data {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: var(--opacity-bg-07);
+    margin-bottom: 10px;
+}
+
+.list.song-data:hover {
+    background-color:  var(--opacity-bg-02);
+}
+
+.song-data .song-left img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+}
+.list.song-data .song-title {
+    font-size: 14px;
+}
+.list.song-data .song-artists {
+    font-size: 12px;
+}
+.list.song-data .song-artists:hover {
+    color: var(--pink-text);
+}
+.list.song-data .song-right {
+    flex-grow: 1;
+    text-align: right;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.56;
+}
+.ranking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.ranking span {
+    font-family: "Roboto",sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #4a90e200;
+}
+
+.ranking span.number1{
+    -webkit-text-stroke: 1px #4a90e2;
+}
+.ranking span.number2 {
+    -webkit-text-stroke: 1px #50e3c2;
+}
+
+.ranking span.number3 {
+    -webkit-text-stroke: 1px #e35050;
+}
+
+.chart-btn-center {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.btn-show-more {
+    cursor: pointer;
+    padding: 5px 37px;
+    margin-top: 5px;
+    border-radius: 999px;    
+    color: var(--white);
+    border: 1px solid var(--white);
+    background-color: var(--opacity-bg-07);
+    outline: none;
+}
+.btn-show-more:hover{
+    background-color:  var(--opacity-bg-02);
+
+}
+
+
+@media screen and (max-width: 900px) { 
+    .ant-row.chart-row {
+        flex-direction: column;
+    
+    }
+
+    .chart-col-list {
+        width: 100%;
+    }
+  
+    .chart-col-line {
+        width: 100%;
+        margin-top: 20px;
+
+    }
+  }

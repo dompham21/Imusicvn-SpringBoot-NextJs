@@ -1,0 +1,72 @@
+.song-data {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.song-data  .song-left {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+
+}
+
+
+.song-data .song-info {
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.song-data .song-info .song-title {
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.song-data .song-info .song-artists {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--opacity-bg-08);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.song-right {
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 10px;
+    color: var(--white);
+}
+
+#caret-tooltip {
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-right: 10px solid transparent;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: var(--zindex-chart-tooltip);
+    opacity: 1;
+}
+
+#chartjs-tooltip {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    padding: 6px;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 4px;
+    z-index: var(--zindex-chart-tooltip);
+}
