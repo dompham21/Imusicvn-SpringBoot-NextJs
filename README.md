@@ -5,7 +5,7 @@
   <a href="https://github.com/dompham21/Imusicvn-SpringBoot-NextJs"><img alt="license" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 </p> 
 
-## [View Demo](http://imusic.vn.s3-website-ap-southeast-1.amazonaws.com)
+## [View Demo](https://imusicvn-spring-boot-next-hya9hdcvq-dompham21.vercel.app)
 
 
 ## Description
