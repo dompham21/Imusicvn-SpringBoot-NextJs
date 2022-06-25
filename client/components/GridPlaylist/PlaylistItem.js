@@ -82,7 +82,7 @@ const PlaylistItem = (props) => {
                             ref={el => (refBtnPlaying.current[id] = el)}
                             onClick={()=>handleStopSong()}
                         >
-                        <Image src="https://imusicvn.s3.ap-southeast-1.amazonaws.com/icon-playing.gif" width={18} height={18} loading='lazy' alt='icon-playing'/>
+                        <Image src="https://res.cloudinary.com/dmriwkfll/image/upload/v1656084685/icon-playing_nvk7oc.gif" width={18} height={18} loading='lazy' alt='icon-playing'/>
                         </button>
                     </div>
                 </div>
