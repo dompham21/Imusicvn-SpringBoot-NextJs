@@ -12,7 +12,7 @@ const LayoutAdmin = ({ children, router }) => {
         <meta name="author" content="Dom Pham" />
         <meta property="og:site_name" content="iMusic Homepage" />
         <meta property="og:type" content="website" />
-        <link rel="icon" href="https://imusicvn.s3.ap-southeast-1.amazonaws.com/logo.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/logo.png" type="image/png" sizes="16x16" />
         
         <title>iMusic - Homepage</title>
         <link
