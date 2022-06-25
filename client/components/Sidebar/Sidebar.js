@@ -65,7 +65,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         >
             <Flex alignItems="center" justifyContent="center" w={{base:'full'}} cursor='pointer'>
               <Link href={'/'} _focus={{boxShadow:"none"}} aria-label='home'>
-                <Image src="https://imusicvn.s3.ap-southeast-1.amazonaws.com/logo.png" width="85" height="85" alt='logo' priority='true'/>
+                <Image src="https://res.cloudinary.com/dmriwkfll/image/upload/v1656084201/logo_cq9yxq.png" width="85" height="85" alt='logo' priority='true'/>
               </Link>
             </Flex>
         </Flex>

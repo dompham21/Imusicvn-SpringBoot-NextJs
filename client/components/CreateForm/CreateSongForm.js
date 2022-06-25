@@ -142,12 +142,14 @@ function CreateSongForm(props) {
                 dispatch(addSong(formData))
             }
             else {
+                
 
                 for (let property in values) {
                     if(property === "photo") {
                         if(values["photo"] !== infoSong.photo) {
                             formData.append(property,values[property]);
                         }
+                    
                     }
                     else if(property === "file") {
                         if(values["file"] !== infoSong.url) {

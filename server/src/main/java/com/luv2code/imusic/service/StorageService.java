@@ -1,68 +1,38 @@
 package com.luv2code.imusic.service;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.model.S3ObjectInputStream;
-import com.amazonaws.util.IOUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
-public class StorageService  {
-    private final Logger log = LoggerFactory.getLogger(StorageService.class);
-
-    @Value("${application.bucket.name}")
-    private String bucketName;
-
+public class StorageService {
     @Autowired
-    private AmazonS3 s3Client;
+    private Cloudinary cloudinary;
 
-    public String uploadFile(MultipartFile file) {
-        File fileObj = convertMultiPartFileToFile(file);
-        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
-        s3Client.putObject(new PutObjectRequest(bucketName, fileName, fileObj));
-        String fileUrl = String.valueOf(s3Client.getUrl(bucketName, fileName));
 
-        fileObj.delete();
-        log.info("file upload: "+ fileName + " ,File url is: " + fileUrl);
-        return fileUrl;
+    public String uploadFile(MultipartFile multipartFile) throws IOException {
+        File file = convert(multipartFile);
+        System.out.println(file.getName());
+        Map uploadParams = new HashMap();
+        uploadParams.put("resource_type", "auto");
+
+        Map result = cloudinary.uploader().upload(file, uploadParams);
+
+        file.delete();
+        return result.get("url").toString();
     }
 
-
-    public byte[] downloadFile(String fileName) {
-        S3Object s3Object = s3Client.getObject(bucketName, fileName);
-        S3ObjectInputStream inputStream = s3Object.getObjectContent();
-        try {
-            byte[] content = IOUtils.toByteArray(inputStream);
-            return content;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    private File convert(MultipartFile multipartFile) throws IOException {
+        File file = new File(Objects.requireNonNull(multipartFile.getOriginalFilename()));
+        FileOutputStream fo = new FileOutputStream(file);
+        fo.write(multipartFile.getBytes());
+        fo.close();
+        return file;
     }
-
-
-    public String deleteFile(String fileName) {
-        s3Client.deleteObject(bucketName, fileName);
-        return fileName + " removed ...";
-    }
-
-
-    private File convertMultiPartFileToFile(MultipartFile file) {
-        File convertedFile = new File(file.getOriginalFilename());
-        try (FileOutputStream fos = new FileOutputStream(convertedFile)) {
-            fos.write(file.getBytes());
-        } catch (IOException e) {
-            log.error("Error converting multipartFile to file", e);
-        }
-        return convertedFile;
-    }
-
 }

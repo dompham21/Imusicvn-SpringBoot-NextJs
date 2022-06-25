@@ -234,5 +234,5 @@ export const GET_LIST_ID_CATEGORY_ENDPOINT = "api/category/getlist";
 
 
 
-export const SERVER_URL = 
-  process.env.NODE_ENV === 'production' ? 'http://imusic-env.eba-mjjqsp3z.ap-southeast-1.elasticbeanstalk.com' : 'http://localhost:5000';
+export const SERVER_URL = 'https://server-imusic.herokuapp.com'
+  // process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000';

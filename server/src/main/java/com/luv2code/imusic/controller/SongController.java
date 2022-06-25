@@ -44,8 +44,8 @@ public class SongController {
 
 
     @PostMapping( "/api/song/add")
-    public ResponseEntity<String> addSong(HttpServletRequest req, @RequestParam("file") MultipartFile mpfile,
-                                        @RequestParam("photo") MultipartFile photoFile) {
+    public ResponseEntity<String> addSong(HttpServletRequest req, @RequestParam(value = "file") MultipartFile mpfile,
+                                        @RequestParam(value = "photo")  MultipartFile photoFile) {
 
         String artist_id = req.getParameter("artist").trim();
         String category_id = req.getParameter("categories").trim();
@@ -145,8 +145,6 @@ public class SongController {
         String introduction = req.getParameter("introduction").trim();
         Song existSong = songService.get(id);
 
-
-
         try {
             if(photoFile != null ) {
                 String songPhoto = storageService.uploadFile(photoFile);
@@ -154,6 +152,7 @@ public class SongController {
             }
 
             if(mpfile != null) {
+                System.out.println(mpfile.toString());
                 String songUrl = storageService.uploadFile(mpfile);
                 existSong.setUrl(songUrl);
             }
