@@ -9,7 +9,7 @@
 
 
 ## Description
-This is a website to liste to music online build with backend Spring Boot, database MySQL, and frontend Nextjs.
+This is a website to listen to music online build with backend Spring Boot, database MySQL, and frontend Nextjs.
 
 ## Project Preview
 > UI Screenshot Preview
