@@ -14,21 +14,25 @@ This is a website to liste to music online build with backend Spring Boot, datab
 ## Project Preview
 > UI Screenshot Preview
 
-![](https://imusicvn.s3.ap-southeast-1.amazonaws.com/Screen+Shot+2021-12-25+at+01.30.46.png)<br/>
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213242/Screen_Shot_2022-06-26_at_10.11.48_iwfqqg.png)<br/>
 
-![](https://imusicvn.s3.ap-southeast-1.amazonaws.com/Screen+Shot+2021-12-25+at+01.32.04.png)<br/>
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213240/Screen_Shot_2022-06-26_at_10.12.43_trgbqa.png)<br/>
 
-![](https://imusicvn.s3.ap-southeast-1.amazonaws.com/Screen+Shot+2021-12-25+at+01.34.19.png)<br/>
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213241/Screen_Shot_2022-06-26_at_10.13.44_tl1zu0.png)<br/>
 
-![](https://imusicvn.s3.ap-southeast-1.amazonaws.com/Screen+Shot+2021-12-25+at+01.35.18.png)<br/>
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213272/Screen_Shot_2022-06-26_at_10.14.21_ocejo4.png)<br/>
 
 > Admin Screenshot Preview
 
-![](https://imusicvn.s3.ap-southeast-1.amazonaws.com/Screen+Shot+2021-12-25+at+01.37.41.png)<br/>
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213384/Screen_Shot_2022-06-26_at_10.15.44_oipogv.png)<br/>
 
-![](https://imusicvn.s3.ap-southeast-1.amazonaws.com/Screen+Shot+2021-12-25+at+01.38.19.png)<br/>
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213384/Screen_Shot_2022-06-26_at_10.15.56_be93x2.png)<br/>
 
-![](https://imusicvn.s3.ap-southeast-1.amazonaws.com/Screen+Shot+2021-12-25+at+01.38.32.png)<br/>
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213426/Screen_Shot_2022-06-26_at_10.16.37_grw9rx.png)<br/>
+
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213426/Screen_Shot_2022-06-26_at_10.16.46_t8wipp.png)<br/>
+
+![](https://res.cloudinary.com/dmriwkfll/image/upload/v1656213426/Screen_Shot_2022-06-26_at_10.16.53_fc2jwd.png)<br/>
 
 
 ## Project Function
